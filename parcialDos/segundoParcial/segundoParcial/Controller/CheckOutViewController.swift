@@ -1,10 +1,13 @@
 //
-//  Pregunta.swift
+//  CheckOutViewController.swift
 //  segundoParcial
 //
-//  Created by Armando Isais Olguin Cabrera on 4/29/19.
+//  Created by Armando Isais Olguin Cabrera
+//  Created by Gema Georgina Toledo Barrera
+//  on 4/29/19.
 //  Copyright © 2019 Armando Isais Olguin Cabrera. All rights reserved.
-//
+//  Copyright © 2019 Gema Georgina Toledo Barrera. All rights reserved.
+
 
 import UIKit
 
@@ -62,20 +65,20 @@ class CheckOutViewController: UIViewController {
     
     @IBAction func placeOrderDidTap(_ sender: AnyObject)
     {
-        let alertController = UIAlertController(title: "Confirm Order", message: "Please confirm that you want to make a payment of \(shoppingCart.getTotal())!", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        let alertController = UIAlertController(title: "Confirmar Orden", message: "Por favor, confirme su pago por $\(shoppingCart.getTotal())!", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel) { (action) in
             
         }
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (action) in
+        let confirmAction = UIAlertAction(title: "Confirmar", style: .default) { (action) in
             
             self.Indicator()
         
             
             
-            let successActionSheet = UIAlertController(title: "Thank you!", message: "Your payment of \(self.shoppingCart.getTotal()) was processed successfully! Please check your email for your order receipt email and shipping information.", preferredStyle: .actionSheet)
+            let successActionSheet = UIAlertController(title: "¡GRACIAS!", message: "Tu pago por $\(self.shoppingCart.getTotal()) Se proceso correctamente, Por favor verifica tu email, se envio el recibo y el numero de guia de tu envio.", preferredStyle: .actionSheet)
             self.present(successActionSheet, animated: true, completion: nil)
             
-            let continueShoppingAction = UIAlertAction(title: "Let's Shop More!", style: UIAlertAction.Style.default){ (action)
+            let continueShoppingAction = UIAlertAction(title: "Seguir Comprando", style: UIAlertAction.Style.default){ (action)
                 in
                 self.shoppingCart.reset()
                 self.navigationController?.popToRootViewController(animated: true)

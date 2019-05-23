@@ -1,10 +1,13 @@
 //
-//  Pregunta.swift
+//  CartViewController.swift
 //  segundoParcial
 //
-//  Created by Armando Isais Olguin Cabrera on 4/29/19.
+//  Created by Armando Isais Olguin Cabrera
+//  Created by Gema Georgina Toledo Barrera
+//  on 4/29/19.
 //  Copyright © 2019 Armando Isais Olguin Cabrera. All rights reserved.
-//
+//  Copyright © 2019 Gema Georgina Toledo Barrera. All rights reserved.
+
 
 import UIKit
 
@@ -48,6 +51,7 @@ class CartViewController: UIViewController {
         self.shoppingCart = ShoppingCart()
         self.ItemStore = shoppingCart.itemStore
         self.UpdateUI()
+    
         
         
 
@@ -64,7 +68,12 @@ class CartViewController: UIViewController {
         self.UpdateUI()
     }
    
-
+    func actualizarCuenta(){
+     
+        UpdateUI()
+        
+        
+    }
     
     func UpdateUI(){
         if ItemStore.items.count >= 3{
